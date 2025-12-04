@@ -39,7 +39,7 @@
                 <i class="fa-solid fa-search"></i>
             </a>
             <a href="nosotros.php" class="nav-link">Nosotros</a>
-            <a href="loader.php" class="nav-link">Taller</a>
+            <a href="Taller.php" class="nav-link">Taller</a>
             <a href="productos.php" class="nav-link link-destacado">Productos</a>
         </div>
 
