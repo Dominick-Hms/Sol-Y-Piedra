@@ -26,24 +26,28 @@
 </head>
 <body>
 
-<!-- Sección del menú superior --><section class="menusuperior">
+<!-- Sección del menú superior -->
+ <section class="menusuperior">
     <nav class="menu-nav">
-        <!-- 1. Enlaces Izquierdos --><div class="menu-links-left">
+        <!-- 1. Enlaces Izquierdos -->
+        <div class="menu-links-left">
             <a href="loader.php" class="menu-icon-link" aria-label="Buscar">
                 <i class="fa-solid fa-search"></i>
             </a>
             <a href="nosotros.php" class="nav-link">Nosotros</a>
-            <a href="loader.php" class="nav-link">Taller</a>
-            <a href="contacto.php" class="nav-link link-destacado">Productos</a>
+            <a href="Taller.php" class="nav-link">Taller</a>
+            <a href="productos.php" class="nav-link link-destacado">Productos</a>
         </div>
 
-        <!-- 2. Logo Central --><div class="menu-logo">
+        <!-- 2. Logo Central -->
+        <div class="menu-logo">
             <a href="index.php">
                 <img src="Imagenes/Logo.png" alt="Logo Sol Y Piedra" class="logo-img">
             </a>
         </div>
 
-        <!-- 3. Enlaces Derechos --><div class="menu-links-right">
+        <!-- 3. Enlaces Derechos -->
+        <div class="menu-links-right">
             <a href="galeria.php" class="nav-link link-destacado">Galería</a>
             <a href="loader.php" class="nav-link">Compra</a>
             <a href="contacto.php" class="nav-link">Contacto</a>
@@ -57,13 +61,6 @@
                 <i class="fa-solid fa-shopping-bag"></i>
             </a>
         </div>
-    </nav>
-</section>
-<!-- Fin de la sección del menú superior --><!-- +++ INICIO SECCIÓN BREADCRUMB +++ --><section class="breadcrumb-container">
-    <nav class="breadcrumb-nav">
-        <a href="index.php">Home</a>
-        <span class="breadcrumb-separator">/</span>
-        <span class="breadcrumb-actual">Productos</span>
     </nav>
 </section>
 <!-- +++ FIN SECCIÓN BREADCRUMB +++ --><!-- 

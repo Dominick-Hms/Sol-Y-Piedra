@@ -31,13 +31,11 @@
     <nav class="menu-nav">
         <!-- 1. Enlaces Izquierdos -->
         <div class="menu-links-left">
-            <!-- CAMBIO: Apunta a loader.php -->
             <a href="loader.php" class="menu-icon-link" aria-label="Buscar">
                 <i class="fa-solid fa-search"></i>
             </a>
             <a href="nosotros.php" class="nav-link">Nosotros</a>
-            <!-- CAMBIO: Apunta a loader.php -->
-            <a href="loader.php" class="nav-link">Taller</a>
+            <a href="Taller.php" class="nav-link">Taller</a>
             <a href="productos.php" class="nav-link link-destacado">Productos</a>
         </div>
 
@@ -51,18 +49,14 @@
         <!-- 3. Enlaces Derechos -->
         <div class="menu-links-right">
             <a href="galeria.php" class="nav-link link-destacado">Galería</a>
-            <!-- CAMBIO: Apunta a loader.php -->
             <a href="loader.php" class="nav-link">Compra</a>
             <a href="contacto.php" class="nav-link">Contacto</a>
-            <!-- CAMBIO: Apunta a loader.php -->
             <a href="loader.php" class="menu-icon-link" aria-label="Perfil de usuario">
                 <i class="fa-solid fa-user"></i>
             </a>
-            <!-- CAMBIO: Apunta a loader.php -->
             <a href="loader.php" class="menu-icon-link" aria-label="Favoritos">
                 <i class="fa-solid fa-heart"></i>
             </a>
-            <!-- CAMBIO: Apunta a loader.php -->
             <a href="loader.php" class="menu-icon-link" aria-label="Carrito de compras">
                 <i class="fa-solid fa-shopping-bag"></i>
             </a>

@@ -39,7 +39,7 @@
                 <i class="fa-solid fa-search"></i>
             </a>
             <a href="nosotros.php" class="nav-link">Nosotros</a>
-            <a href="loader.php" class="nav-link">Taller</a>
+            <a href="Taller.php" class="nav-link">Taller</a>
             <a href="productos.php" class="nav-link link-destacado">Productos</a>
         </div>
 
@@ -54,7 +54,7 @@
         <div class="menu-links-right">
             <a href="galeria.php" class="nav-link link-destacado">Galería</a>
             <a href="loader.php" class="nav-link">Compra</a>
-            <a href="contacto.html" class="nav-link">Contacto</a> <!-- CAMBIADO A .HTML -->
+            <a href="contacto.php" class="nav-link">Contacto</a>
             <a href="loader.php" class="menu-icon-link" aria-label="Perfil de usuario">
                 <i class="fa-solid fa-user"></i>
             </a>

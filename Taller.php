@@ -24,5 +24,43 @@
 </head>
 <body>
     
+<section class="menusuperior">
+    <nav class="menu-nav">
+        <!-- 1. Enlaces Izquierdos -->
+        <div class="menu-links-left">
+            <a href="loader.php" class="menu-icon-link" aria-label="Buscar">
+                <i class="fa-solid fa-search"></i>
+            </a>
+            <a href="nosotros.php" class="nav-link">Nosotros</a>
+            <a href="Taller.php" class="nav-link">Taller</a>
+            <a href="productos.php" class="nav-link link-destacado">Productos</a>
+        </div>
+
+        <!-- 2. Logo Central -->
+        <div class="menu-logo">
+            <a href="index.php">
+                <img src="Imagenes/Logo.png" alt="Logo Sol Y Piedra" class="logo-img">
+            </a>
+        </div>
+
+        <!-- 3. Enlaces Derechos -->
+        <div class="menu-links-right">
+            <a href="galeria.php" class="nav-link link-destacado">Galería</a>
+            <a href="loader.php" class="nav-link">Compra</a>
+            <a href="contacto.php" class="nav-link">Contacto</a>
+            <a href="loader.php" class="menu-icon-link" aria-label="Perfil de usuario">
+                <i class="fa-solid fa-user"></i>
+            </a>
+            <a href="loader.php" class="menu-icon-link" aria-label="Favoritos">
+                <i class="fa-solid fa-heart"></i>
+            </a>
+            <a href="loader.php" class="menu-icon-link" aria-label="Carrito de compras">
+                <i class="fa-solid fa-shopping-bag"></i>
+            </a>
+        </div>
+    </nav>
+</section>
+
+
 </body>
 </html>
