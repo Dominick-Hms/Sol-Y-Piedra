@@ -1,0 +1,893 @@
+ body {
+            /* Usamos Inter como fuente base para legibilidad general */
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            background-color: #ffffff; 
+        }
+
+        /* ==================================================
+          Estilos del Menú Superior
+        ==================================================
+        */
+
+        .menusuperior {
+            background-color: #ffffff;
+            color: #000000; 
+            padding: 10px 30px;
+            border-bottom: 1px solid #eeeeee; 
+            display: flex;
+            justify-content: center;
+        }
+
+        .menu-nav {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px; 
+            max-width: 1400px;
+            width: 100%;
+        }
+
+        /* --- 1. Enlaces Izquierdos y Derechos --- */
+
+        .menu-links-left,
+        .menu-links-right {
+            display: flex;
+            align-items: center;
+            gap: 25px; 
+        }
+
+        /* Estilo general de todos los enlaces en el nav */
+        .menu-nav a {
+            color: #000000; 
+            text-decoration: none;
+            padding: 8px 0; 
+            white-space: nowrap; 
+            
+            /* Transición suave para color y tamaño */
+            transform: scale(1); /* Estado base del tamaño */
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .menu-nav a:hover {
+            color: #DAA520; /* Un tono de dorado */
+            transform: scale(1.1); /* Un 10% más grande */
+        }
+        
+        /* Aplicamos la fuente script a los enlaces de texto */
+        .menu-nav a.nav-link {
+            font-family: 'Great Vibes', cursive; 
+            font-weight: 400; 
+            font-size: 24px; 
+            position: relative;
+            top: 2px;
+            color: #333333; /* Color base específico */
+        }
+
+        .menu-nav a.nav-link:hover {
+            color: #DAA520; /* Dorado */
+        }
+
+
+        /* Jerarquía para enlaces destacados */
+        .menu-nav a.link-destacado {
+            color: #000000; /* Color base específico */
+            font-size: 28px; 
+        }
+        
+        .menu-nav a.link-destacado:hover {
+            color: #DAA520; /* Dorado */
+        }
+
+
+        /* --- 2. Logo Central --- */
+
+        .menu-logo {
+            flex-grow: 0;
+            flex-shrink: 0;
+            padding: 0 20px; 
+            transform: scale(1);
+            transition: transform 0.3s ease;
+        }
+        .menu-logo:hover {
+             transform: scale(1.05);
+        }
+        
+        .logo-img {
+            max-height: 90px; 
+            width: auto;
+            display: block; 
+        }
+
+        /* --- 3. Iconos --- */
+        .menu-icon-link { }
+        
+        .menu-icon-link .fa-solid {
+            font-size: 22px; /* Controla el tamaño del icono */
+            display: block;
+        }
+
+        /* ==================================================
+          Diseño Responsivo (Móvil)
+        ==================================================
+        */
+
+        @media (max-width: 900px) {
+            .menu-nav {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .menu-logo {
+                order: -1; 
+            }
+            .menu-links-left,
+            .menu-links-right {
+                justify-content: center;
+                width: 100%;
+                gap: 20px;
+                padding: 5px 0;
+            }
+            .menu-nav a.nav-link {
+                font-size: 22px;
+            }
+            .menu-nav a.link-destacado {
+                font-size: 26px;
+            }
+
+            .menu-nav a:hover {
+                transform: scale(1);
+                color: #DAA520; 
+            }
+            .menu-nav a.nav-link:hover {
+                 color: #DAA520;
+            }
+            .menu-nav a.link-destacado:hover {
+                color: #DAA520;
+            }
+
+            .menu-logo:hover {
+                transform: scale(1);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .menu-links-left,
+            .menu-links-right {
+                gap: 15px;
+                flex-wrap: wrap; 
+            }
+            .menusuperior {
+                padding: 15px;
+            }
+            .menu-nav a.nav-link {
+                font-size: 20px;
+            }
+            .menu-nav a.link-destacado {
+                font-size: 24px;
+            }
+        }
+      
+        /* ==================================================
+          Estilos del Breadcrumb (Migas de Pan)
+        ==================================================
+        */
+        .breadcrumb-container {
+            padding: 20px 30px; /* Un poco más de padding */
+            background-color: #f9f9f9; /* Un fondo muy sutil */
+            border-bottom: 1px solid #eeeeee;
+            display: flex;
+            justify-content: center;
+        }
+
+        .breadcrumb-nav {
+            max-width: 1400px;
+            width: 100%;
+            /* FUENTE CAMBIADA */
+            font-family: 'EB Garamond', serif;
+            font-size: 13px; /* Tamaño ajustado (reducido) */
+            font-weight: 500;
+            text-transform: uppercase; /* Mayúsculas */
+            letter-spacing: 1px; /* Espaciado */
+        }
+
+        .breadcrumb-nav a {
+            color: #DAA520; /* Dorado para el enlace */
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .breadcrumb-nav a:hover {
+            color: #333; /* Oscuro al pasar el ratón */
+        }
+
+        .breadcrumb-separator {
+            margin: 0 10px;
+            color: #999;
+        }
+
+        .breadcrumb-actual {
+            color: #333; /* El color de la página actual */
+            font-weight: 500;
+        }
+        
+        /* ==================================================
+          Estilos de la Cabecera de Contacto (primerapartado)
+        ==================================================
+        */
+
+        .primerapartado {
+            padding: 50px 30px;
+            display: flex;
+            justify-content: center;
+            background-color: #ffffff;
+        }
+        
+        .contact-header-container {
+            max-width: 1200px;
+            width: 100%;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .contact-header-title {
+            font-family: 'EB Garamond', serif;
+            font-size: 34px;
+            font-weight: 500;
+            color: #222;
+            margin: 0 0 15px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .contact-header-subtitle {
+            font-family: 'Inter', sans-serif;
+            font-size: 18px;
+            color: #666;
+            margin: 0;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto; /* Centra el subtítulo si es corto */
+        }
+
+        /* NUEVO: Contenedor wrapper para centrar contenido */
+        .primerapartado-wrapper {
+            max-width: 1400px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centra los hijos horizontalmente */
+        }
+
+        .contact-options-container {
+            max-width: 1200px;
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap; /* Para móvil */
+            justify-content: center;
+            gap: 20px;
+            padding: 30px;
+            border: 1px solid #f0f0f0;
+            border-radius: 12px;
+        }
+        
+        .contact-option-item {
+            display: flex;
+            align-items: flex-start; /* Alinea al inicio */
+            gap: 20px;
+            padding: 20px;
+            flex: 1; /* Ocupa el espacio disponible */
+            min-width: 300px; /* Ancho mínimo antes de apilar */
+        }
+        
+        .contact-option-item i {
+            font-size: 28px;
+            color: #DAA520; /* Dorado */
+            margin-top: 3px;
+            width: 40px;
+            text-align: center;
+        }
+        
+        .contact-option-text h4 {
+            font-family: 'EB Garamond', serif;
+            font-size: 18px;
+            font-weight: 500;
+            color: #333;
+            margin: 0 0 8px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .contact-option-text p {
+            font-family: 'Inter', sans-serif;
+            font-size: 15px;
+            color: #666;
+            margin: 0;
+            line-height: 1.6;
+        }
+        
+        /* Separador visual opcional */
+        .contact-option-separator {
+            width: 1px;
+            background-color: #f0f0f0;
+        }
+        
+        @media (max-width: 768px) {
+            .contact-options-container {
+                flex-direction: column; /* Apila las opciones */
+            }
+            .contact-option-separator {
+                width: 100%; /* El separador se vuelve horizontal */
+                height: 1px;
+            }
+            .contact-header-title {
+                font-size: 28px;
+            }
+            .contact-header-subtitle {
+                font-size: 16px;
+            }
+        }
+        
+        /* ==================================================
+          Estilos del Formulario de Contacto (segundoapartado)
+        ==================================================
+        */
+        .segundoapartado {
+            padding: 30px;
+            background-color: #f9f9f9; /* Fondo ligero para la sección */
+            display: flex;
+            justify-content: center;
+        }
+        
+        .contact-form-container {
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .contact-main-title {
+            font-family: 'EB Garamond', serif;
+            font-size: 34px;
+            font-weight: 500;
+            color: #222;
+            text-align: center;
+            margin: 0 0 15px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .contact-main-subtitle {
+            font-family: 'Inter', sans-serif;
+            font-size: 18px;
+            color: #666;
+            margin: 0 0 40px 0;
+            line-height: 1.6;
+            max-width: 600px;
+            text-align: center;
+            margin: 0 auto 40px auto; /* Centra el subtítulo */
+        }
+        
+        .contact-body-container {
+            display: flex;
+            flex-wrap: wrap; /* Para móvil */
+            gap: 30px;
+            background-color: #ffffff;
+            border: 1px solid #f0f0f0;
+            border-radius: 12px;
+            overflow: hidden; /* Para que el borde redondeado afecte a las columnas */
+        }
+        
+        /* Columna Izquierda (Info) */
+        .contact-info-box {
+            flex: 1;
+            min-width: 300px;
+            background-color: #3d3d3d; /* Fondo oscuro */
+            color: #ffffff;
+            padding: 40px;
+            border-radius: 10px 0 0 10px;
+        }
+        
+        .contact-info-box h4 {
+            font-family: 'EB Garamond', serif;
+            font-size: 24px;
+            font-weight: 500;
+            margin: 0 0 10px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .contact-info-box p {
+            font-family: 'Inter', sans-serif;
+            font-size: 15px;
+            line-height: 1.7;
+            color: #cccccc;
+            margin-bottom: 25px;
+        }
+        
+        .contact-info-item {
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        
+        .contact-info-item i {
+            font-size: 20px;
+            color: #DAA520; /* Dorado */
+            margin-top: 3px;
+        }
+        
+        .contact-info-item div {
+            font-size: 15px;
+            color: #cccccc;
+            line-height: 1.6;
+        }
+        .contact-info-item div strong {
+            display: block;
+            color: #ffffff;
+            font-weight: 700;
+            margin-bottom: 3px;
+        }
+        
+        /* Columna Derecha (Formulario) */
+        .contact-form-box {
+            flex: 2; /* Más ancha */
+            min-width: 300px;
+            padding: 40px;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .form-group {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            min-width: 200px; /* Ancho mínimo para campos */
+        }
+        
+        .form-group.full-width {
+            flex-basis: 100%; /* Ocupa todo el ancho */
+        }
+        
+        .form-group label {
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            color: #444;
+            margin-bottom: 8px;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 15px;
+            box-sizing: border-box; /* Importante para el padding */
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #DAA520; /* Dorado */
+            box-shadow: 0 0 5px rgba(218, 165, 32, 0.3);
+        }
+        
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .form-button-container {
+            display: flex;
+            justify-content: flex-end; /* Alinea botones a la derecha */
+            gap: 15px;
+            flex-basis: 100%;
+            margin-top: 10px;
+        }
+        
+        .form-button {
+            padding: 12px 25px;
+            font-family: 'Inter', sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .button-submit {
+            background-color: #DAA520; /* Dorado */
+            color: #ffffff;
+            border: 2px solid #DAA520;
+        }
+        .button-submit:hover {
+            background-color: #b88b1b;
+            border-color: #b88b1b;
+            transform: scale(1.03);
+        }
+        
+        .button-reset {
+            background-color: #f0f0f0;
+            color: #555;
+            border: 2px solid #f0f0f0;
+        }
+        .button-reset:hover {
+            background-color: #e0e0e0;
+            border-color: #e0e0e0;
+        }
+        
+        @media (max-width: 900px) {
+            .contact-info-box {
+                border-radius: 10px 10px 0 0; /* Bordes en móvil */
+            }
+            .contact-form-box {
+                border-radius: 0 0 10px 10px;
+            }
+        }
+        
+        /* ==================================================
+          Estilos del Mapa (tercerapartado)
+        ==================================================
+        */
+        .tercerapartado {
+            padding: 50px 30px;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .map-container {
+            max-width: 1200px;
+            width: 100%;
+        }
+        
+        .map-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+        
+        .map-title {
+            font-family: 'EB Garamond', serif;
+            font-size: 34px;
+            font-weight: 500;
+            color: #222;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* ESTILO DE BOTÓN UNIFICADO */
+        .btn-outline {
+            padding: 10px 20px;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            color: #DAA520; /* Dorado */
+            background-color: transparent;
+            border: 2px solid #DAA520; /* Dorado */
+            border-radius: 8px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .btn-outline:hover {
+            background-color: #DAA520;
+            color: #ffffff;
+            transform: scale(1.05);
+        }
+        
+        .map-placeholder {
+            width: 100%;
+            height: 450px;
+            background-color: #e0e0e0;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+            font-size: 18px;
+            font-weight: 500;
+            border: 1px solid #ccc;
+        }
+        
+        /* ==================================================
+          Estilos del FAQ (cuartoapartado)
+        ==================================================
+        */
+        .cuartoapartado {
+            padding: 50px 30px;
+            background-color: #f9f9f9; /* Fondo ligero */
+            display: flex;
+            flex-direction: column; /* Apilamos los elementos */
+            align-items: center;
+            gap: 50px; /* Espacio entre "A tener en cuenta" y "FAQ" */
+        }
+        
+        /* NUEVO: Contenedor "A tener en cuenta" */
+        .info-container {
+            max-width: 1000px;
+            width: 100%;
+        }
+        
+        .info-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+
+        .info-header-text {
+            flex: 1;
+        }
+
+        .info-title {
+            font-family: 'EB Garamond', serif;
+            font-size: 34px;
+            font-weight: 500;
+            color: #222;
+            margin: 0 0 5px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .info-subtitle {
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            color: #666;
+            margin: 0;
+        }
+        
+        .info-box {
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 25px;
+        }
+        
+        .info-box p {
+            font-family: 'Inter', sans-serif;
+            font-size: 15px;
+            color: #555;
+            line-height: 1.7;
+            margin: 0;
+        }
+        .info-box p:first-child {
+            margin-bottom: 15px;
+        }
+        
+        /* Contenedor "Preguntas Frecuentes" */
+        .faq-container {
+            max-width: 1000px; /* Un poco más angosto para legibilidad */
+            width: 100%;
+        }
+        
+        .faq-title {
+            font-family: 'EB Garamond', serif;
+            font-size: 34px;
+            font-weight: 500;
+            color: #222;
+            text-align: center;
+            margin: 0 0 40px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .faq-accordion {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .faq-item {
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            cursor: pointer;
+            background-color: #ffffff;
+            transition: background-color 0.3s ease;
+        }
+        .faq-question:hover {
+            background-color: #fcfcfc;
+        }
+        
+        .faq-question h5 {
+            /* ESTILO DE TÍTULO APLICADO */
+            font-family: 'EB Garamond', serif;
+            font-size: 19px; /* Tamaño ajustado */
+            font-weight: 500;
+            color: #222;
+            margin: 0;
+            text-transform: uppercase; /* Mayúsculas */
+            letter-spacing: 1px; /* Espaciado */
+        }
+        
+        .faq-question i {
+            font-size: 16px;
+            color: #DAA520; /* Dorado */
+            transition: transform 0.3s ease;
+        }
+        
+        /* Estilo para el ícono cuando está activo */
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+        
+        .faq-answer {
+            max-height: 0; /* Oculto por defecto */
+            overflow: hidden;
+            transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+            padding: 0 20px;
+        }
+        
+        .faq-answer p {
+            font-family: 'Inter', sans-serif;
+            font-size: 15px;
+            color: #666;
+            line-height: 1.7;
+            margin: 0;
+            padding-bottom: 20px; /* Padding solo abajo */
+        }
+        
+        /* Estilo para la respuesta cuando está activa */
+        .faq-item.active .faq-answer {
+            max-height: 300px; /* Altura máxima (ajustar si es necesario) */
+            padding-top: 0;
+            padding-bottom: 20px;
+        }
+
+
+        /* ==================================================
+          Estilos del Pie de Página
+        ==================================================
+        */
+        .piepagina {
+            background-color: #2b2b2b; /* Fondo oscuro para el footer */
+            color: #cccccc; /* Color de texto claro */
+            padding: 60px 30px 0; /* Espaciado interno, sin padding abajo */
+            margin-top: 50px; /* Separación del contenido de la página */
+            font-family: 'Inter', sans-serif; /* Fuente legible */
+        }
+
+        .footer-container {
+            max-width: 1400px; /* Coincide con el ancho del menú */
+            margin: 0 auto; /* Centra el contenedor */
+            display: flex;
+            flex-wrap: wrap; /* Permite que las columnas se apilen en móvil */
+            justify-content: space-between; /* Distribuye las columnas */
+            gap: 30px; /* Espacio entre columnas */
+        }
+
+        /* Columna individual del footer */
+        .footer-column {
+            flex: 1; /* Permite que las columnas crezcan */
+            min-width: 230px; /* Ancho mínimo antes de apilarse */
+            margin-bottom: 30px;
+        }
+
+        /* Columna específica para el logo (izquierda) */
+        .footer-column.logo-column {
+            flex-basis: 300px; /* Un poco más de espacio base */
+            flex-grow: 1;
+        }
+
+        .footer-logo-img {
+            max-width: 180px; /* Tamaño del logo en el footer */
+            margin-bottom: 20px;
+        }
+
+        /* Títulos de las columnas */
+        .footer-column h4 {
+            /* Fuente caligráfica para los títulos */
+            font-family: 'Great Vibes', cursive;
+            font-weight: 400; /* Las fuentes script no suelen ser bold */
+            color: #ffffff;
+            font-size: 28px; /* Aumentar tamaño para la fuente script */
+            margin-bottom: 25px;
+            position: relative;
+        }
+        
+        /* Línea decorativa bajo los títulos */
+        .footer-column h4::after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 2px;
+            background-color: #DAA520; /* Dorado */
+            margin-top: 8px;
+        }
+
+        /* Estilo para párrafos de contacto y descripción */
+        .footer-column p {
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        /* Iconos de contacto */
+        .footer-column p i {
+            color: #DAA520; /* Dorado */
+            margin-right: 12px;
+            width: 20px;
+            text-align: center;
+        }
+
+        /* Lista de enlaces */
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-column ul li a {
+            color: #cccccc;
+            text-decoration: none;
+            font-size: 15px; /* Tamaño de fuente normal */
+            transition: color 0.3s ease, padding-left 0.3s ease;
+        }
+
+        .footer-column ul li a:hover {
+            color: #DAA520; /* Dorado */
+            padding-left: 5px; /* Efecto sutil al pasar el ratón */
+        }
+
+        /* Iconos de Redes Sociales */
+        .footer-socials {
+            margin-top: 25px;
+        }
+
+        .footer-socials a {
+            color: #ffffff;
+            background-color: #444444;
+            width: 40px;
+            height: 40px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 18px;
+            margin-right: 10px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .footer-socials a:hover {
+            background-color: #DAA520; /* Dorado */
+            color: #2b2b2b; /* Color oscuro */
+            transform: scale(1.1);
+        }
+
+        /* Barra inferior de Copyright */
+        .footer-bottom-bar {
+            background-color: #1a1a1a; /* Aún más oscuro */
+            text-align: center;
+            padding: 20px 30px;
+            margin: 30px -30px 0; /* Se estira al ancho del padding del footer */
+            font-size: 14px;
+            color: #999999;
+        }

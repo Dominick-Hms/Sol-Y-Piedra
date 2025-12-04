@@ -1,0 +1,793 @@
+ /* --- Reseteo Básico y Fuente --- */
+        body {
+            /* Usamos Inter como fuente base para legibilidad general */
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            background-color: #ffffff; 
+        }
+
+        /* ==================================================
+          Estilos del Menú Superior
+        ==================================================
+        */
+
+        .menusuperior {
+            background-color: #ffffff;
+            color: #000000; 
+            padding: 10px 30px;
+            border-bottom: 1px solid #eeeeee; 
+            display: flex;
+            justify-content: center;
+        }
+
+        .menu-nav {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px; 
+            max-width: 1400px;
+            width: 100%;
+        }
+
+        /* --- 1. Enlaces Izquierdos y Derechos --- */
+
+        .menu-links-left,
+        .menu-links-right {
+            display: flex;
+            align-items: center;
+            gap: 25px; 
+        }
+
+        /* Estilo general de todos los enlaces en el nav */
+        .menu-nav a {
+            color: #000000; 
+            text-decoration: none;
+            padding: 8px 0; 
+            white-space: nowrap; 
+            
+            /* Transición suave para color y tamaño */
+            transform: scale(1); /* Estado base del tamaño */
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .menu-nav a:hover {
+            color: #DAA520; /* Un tono de dorado */
+            transform: scale(1.1); /* Un 10% más grande */
+        }
+        
+        /* Aplicamos la fuente script a los enlaces de texto */
+        .menu-nav a.nav-link {
+            font-family: 'Great Vibes', cursive; 
+            font-weight: 400; 
+            font-size: 24px; 
+            position: relative;
+            top: 2px;
+            color: #333333; /* Color base específico */
+        }
+
+        .menu-nav a.nav-link:hover {
+            color: #DAA520; /* Dorado */
+        }
+
+
+        /* Jerarquía para enlaces destacados */
+        .menu-nav a.link-destacado {
+            color: #000000; /* Color base específico */
+            font-size: 28px; 
+        }
+        
+        .menu-nav a.link-destacado:hover {
+            color: #DAA520; /* Dorado */
+        }
+
+
+        /* --- 2. Logo Central --- */
+
+        .menu-logo {
+            flex-grow: 0;
+            flex-shrink: 0;
+            padding: 0 20px; 
+            transform: scale(1);
+            transition: transform 0.3s ease;
+        }
+        .menu-logo:hover {
+             transform: scale(1.05);
+        }
+        
+        .logo-img {
+            max-height: 90px; 
+            width: auto;
+            display: block; 
+        }
+
+        /* --- 3. Iconos --- */
+        .menu-icon-link { }
+        
+        .menu-icon-link .fa-solid {
+            font-size: 22px; /* Controla el tamaño del icono */
+            display: block;
+        }
+
+        /* ==================================================
+          Diseño Responsivo (Móvil)
+        ==================================================
+        */
+
+        @media (max-width: 900px) {
+            .menu-nav {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .menu-logo {
+                order: -1; 
+            }
+            .menu-links-left,
+            .menu-links-right {
+                justify-content: center;
+                width: 100%;
+                gap: 20px;
+                padding: 5px 0;
+            }
+            .menu-nav a.nav-link {
+                font-size: 22px;
+            }
+            .menu-nav a.link-destacado {
+                font-size: 26px;
+            }
+
+            .menu-nav a:hover {
+                transform: scale(1);
+                color: #DAA520; 
+            }
+            .menu-nav a.nav-link:hover {
+                 color: #DAA520;
+            }
+            .menu-nav a.link-destacado:hover {
+                color: #DAA520;
+            }
+
+            .menu-logo:hover {
+                transform: scale(1);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .menu-links-left,
+            .menu-links-right {
+                gap: 15px;
+                flex-wrap: wrap; 
+            }
+            .menusuperior {
+                padding: 15px;
+            }
+            .menu-nav a.nav-link {
+                font-size: 20px;
+            }
+            .menu-nav a.link-destacado {
+                font-size: 24px;
+            }
+        }
+      
+        
+        /* ==================================================
+          Estilos del Banner Principal (Primer Apartado)
+        ==================================================
+        */
+
+        .primerapartado {
+            position: relative; /* Para el overlay y el contenido centrado */
+            width: 100%;
+            height: 80vh; /* 80% de la altura de la pantalla */
+            min-height: 450px; /* Altura mínima */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #ffffff;
+            overflow: hidden; /* Asegura que el video no se desborde */
+        }
+        
+        /* Video de fondo del banner */
+        .hero-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); /* Centra el video */
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: 0; /* Detrás de todo el contenido y overlay */
+            object-fit: cover; /* Cubre todo el contenedor */
+        }
+        
+        /* Overlay oscuro para legibilidad */
+        .primerapartado::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* 50% de opacidad */
+            z-index: 1; /* Encima del video */
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2; /* Sobre el overlay */
+            max-width: 90%;
+            padding: 20px;
+        }
+        
+        /* Subtítulo (Artesanía...) */
+        .hero-content h2 {
+            /* Fuente 'EB Garamond' */
+            font-family: 'EB Garamond', serif;
+            font-size: 18px; 
+            font-weight: 500; 
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #DAA520; /* Color dorado */
+            margin: 0;
+            position: relative; 
+            top: -10px;         
+        }
+        
+        /* Título Principal (Diseños Únicos...) */
+        .hero-content h1 {
+            /* Usamos nuestra fuente caligráfica */
+            font-family: 'Great Vibes', cursive;
+            font-size: clamp(3rem, 7vw, 5.5rem); /* Tamaño fluido y grande */
+            color: #ffffff;
+            font-weight: 400;
+            margin: 10px 0 30px;
+            line-height: 1.1;
+        }
+
+        /* Botón (Ver Productos) */
+        .hero-button {
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 16px;
+            display: inline-block;
+            padding: 12px 35px;
+            
+            border: 2px solid #DAA520; /* Borde dorado */
+            color: #ffffff; /* Texto blanco */
+            
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        .hero-button:hover {
+            background-color: #DAA520; /* Fondo dorado */
+            color: #000000; /* Texto negro */
+        }
+
+
+        /* ==================================================
+          Estilos del Segundo Apartado (Presentación Taller)
+        ==================================================
+        */
+        
+        /* Contenedor principal de la sección */
+        .segundoapartado {
+            padding: 80px 30px; /* Espaciado vertical y horizontal */
+            background-color: #ffffff;
+            border-bottom: 1px dashed #ddd; /* Mantenemos el separador */
+        }
+        
+        /* Contenedor para centrar y limitar el ancho */
+        .container-apartado {
+            max-width: 1200px; /* Ancho máximo del contenido */
+            margin: 0 auto; /* Centrar el contenedor */
+            display: flex;
+            align-items: center; /* Alinear verticalmente las columnas */
+            gap: 50px; /* Espacio entre texto e imagen */
+            flex-wrap: wrap; /* Para responsividad */
+        }
+
+        /* Columnas de texto e imagen */
+        .col-texto {
+            flex: 1; /* Ambas columnas toman 50% */
+            min-width: 320px; /* Ancho mínimo antes de apilarse */
+        }
+        
+        .col-imagen {
+            flex: 1;
+            min-width: 320px;
+            /* Añadido para centrar la tarjeta */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* Título de la sección */
+        .titulo-seccion {
+            font-family: 'Great Vibes', cursive; /* Fuente caligráfica */
+            font-size: 48px; /* Tamaño grande y elegante */
+            color: #333333;
+            font-weight: 400;
+            margin: 0 0 25px 0;
+            line-height: 1.2;
+        }
+        
+        /* Estilo para la cita (texto de identidad) */
+        .texto-identidad {
+            margin: 0;
+            padding-left: 25px; /* Espacio para la barra */
+            border-left: 4px solid #DAA520; /* Barra dorada */
+            
+            font-family: 'Inter', sans-serif; /* Fuente legible */
+            font-size: 20px;
+            color: #555555;
+            line-height: 1.6;
+            font-style: italic; /* Estilo de cita */
+        }
+        
+        .texto-identidad p {
+            margin: 0;
+        }
+        
+        /* Responsividad para la sección */
+        @media (max-width: 768px) {
+            .container-apartado {
+                flex-direction: column; /* Apilar columnas */
+                gap: 30px;
+            }
+            .titulo-seccion {
+                text-align: center; /* Centrar título en móvil */
+                font-size: 40px;
+            }
+            .texto-identidad {
+                font-size: 18px; /* Texto ligeramente más pequeño */
+            }
+        }
+
+        /* ==================================================
+           Estilos para la Card 3D (Taller)
+         ==================================================
+        */
+        .card {
+          position: relative;
+          width: 300px;
+          height: 200px;
+          background-color: #f2f2f2;
+          border-radius: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          overflow: hidden;
+          perspective: 1000px;
+          box-shadow: 0 0 0 5px #ffffff80;
+          transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .card svg {
+          width: 48px;
+          fill: #333;
+          transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .card:hover {
+          transform: scale(1.05);
+          /* Sombra cambiada a oscura para ser visible en fondo blanco */
+          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+        }
+
+        .card__content {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          padding: 20px;
+          box-sizing: border-box;
+          background-color: #f2f2f2;
+          transform: rotateX(-90deg);
+          transform-origin: bottom;
+          transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .card:hover .card__content {
+          transform: rotateX(0deg);
+        }
+
+        .card__title {
+          margin: 0;
+          font-size: 24px;
+          color: #333;
+          font-weight: 700;
+          font-family: 'Inter', sans-serif; /* Consistencia de fuente */
+        }
+
+        .card:hover svg {
+          scale: 0;
+        }
+
+        .card__description {
+          margin: 10px 0 0;
+          font-size: 14px;
+          color: #777;
+          line-height: 1.4;
+          font-family: 'Inter', sans-serif; /* Consistencia de fuente */
+        }
+
+
+        /* ==================================================
+          Estilos del Tercer Apartado (Proceso Creativo)
+        ==================================================
+        */
+        .tercerapartado {
+            padding: 80px 30px;
+            background-color: #f9f9f9; /* Un fondo ligeramente gris para diferenciar */
+            border-bottom: 1px dashed #ddd;
+            text-align: center; /* Centrar todo el contenido */
+        }
+
+        /* Contenedor para esta sección (lo hacemos vertical) */
+        .tercerapartado .container-apartado {
+            flex-direction: column;
+            max-width: 1100px;
+            gap: 0; /* Reseteamos el gap para controlar el espacio manualmente */
+        }
+        
+        /* Título (ya existe) */
+        .tercerapartado .titulo-seccion {
+            margin-bottom: 60px; /* Más espacio después del título */
+        }
+
+        /* Contenedor de los 4 pasos del proceso */
+        .proceso-container {
+            display: flex;
+            flex-wrap: wrap; /* Para que se apilen en móvil */
+            justify-content: space-around; /* Distribuir los pasos */
+            gap: 30px; /* Espacio entre pasos */
+            width: 100%;
+            margin-bottom: 60px; /* Espacio antes de la cita */
+        }
+
+        /* Cada paso individual */
+        .proceso-paso {
+            flex: 1; /* Crecer para ocupar espacio */
+            min-width: 200px; /* Ancho mínimo antes de apilarse */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px; /* Espacio entre icono y texto */
+        }
+
+        /* Círculo del icono */
+        .proceso-icon {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 3px solid #DAA520; /* Borde dorado */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .proceso-icon i {
+            font-size: 40px;
+            color: #DAA520; /* Icono dorado */
+            transition: all 0.3s ease;
+        }
+
+        .proceso-paso h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            color: #333;
+            font-weight: 500;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Efecto Hover para los pasos */
+        .proceso-paso:hover .proceso-icon {
+            background-color: #DAA520; /* Fondo dorado */
+            transform: scale(1.05);
+        }
+        .proceso-paso:hover .proceso-icon i {
+            color: #ffffff; /* Icono blanco */
+        }
+
+        /* Cita de filosofía (reutilizando y centrando) */
+        .tercerapartado .texto-identidad {
+            max-width: 700px; /* Ancho máximo para la cita */
+            margin: 0 auto; /* Centrar la cita */
+            font-size: 22px; /* Un poco más grande para darle énfasis */
+            text-align: center;
+        }
+
+
+        /* ==================================================
+          Estilos del Cuarto Apartado (Nuestras Creaciones)
+        ==================================================
+        */
+        .cuartoapartado {
+            padding: 80px 30px;
+            background-color: #ffffff; /* Fondo blanco para alternar */
+            border-bottom: 1px dashed #ddd;
+            text-align: center;
+        }
+
+        /* Contenedor vertical */
+        .cuartoapartado .container-apartado {
+            flex-direction: column;
+            max-width: 1300px; /* Un poco más ancho para las 3 cards */
+            gap: 0;
+        }
+        
+        /* Título de la sección */
+        .cuartoapartado .titulo-seccion {
+            font-family: 'Great Vibes', cursive; /* FUENTE CAMBIADA */
+            font-size: 48px; /* TAMAÑO AJUSTADO */
+            font-weight: 400; /* PESO AJUSTADO */
+            text-transform: none; /* QUITADO */
+            letter-spacing: normal; /* QUITADO */
+            margin-bottom: 60px;
+            color: #333333;
+        }
+
+        /* Contenedor para las 3 tarjetas de categorías */
+        .creaciones-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; /* Centrar las tarjetas */
+            gap: 30px; /* Espacio entre tarjetas */
+            width: 100%;
+            margin-bottom: 80px; /* Espacio debajo de las tarjetas */
+        }
+
+        /* Tarjeta individual de categoría */
+        .creacion-card {
+            flex-basis: 350px; /* Ancho base de la tarjeta */
+            flex-grow: 1; /* Permitir que crezca si hay espacio */
+            min-width: 300px; /* Ancho mínimo antes de apilarse */
+            
+            background-color: #ffffff;
+            border-radius: 10px; /* Bordes redondeados */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Sombra sutil */
+            overflow: hidden; /* Para que la imagen respete el radio */
+            
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .creacion-card:hover {
+            transform: translateY(-5px) scale(1.02); /* Efecto de levitación */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12); /* Sombra más pronunciada */
+        }
+
+        /* Placeholder de la imagen de la tarjeta */
+        .card-imagen-placeholder {
+            height: 250px;
+            background-color: #DAA520; /* Nuestro color dorado */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            font-style: italic;
+            font-size: 18px;
+        }
+
+        /* Contenido de texto de la tarjeta */
+        .card-contenido {
+            padding: 25px;
+            text-align: left; /* Alineado a la izquierda como en la imagen */
+        }
+
+        .card-contenido h4 {
+            font-family: 'EB Garamond', serif; /* FUENTE CAMBIADA */
+            font-weight: 500; /* PESO CAMBIADO */
+            font-size: 22px; /* TAMAÑO AJUSTADO */
+            color: #333;
+            margin: 0 0 10px 0;
+            text-transform: uppercase; /* AÑADIDO */
+            letter-spacing: 1px; /* AÑADIDO */
+        }
+
+        .card-contenido p {
+            font-family: 'Inter', sans-serif;
+            font-size: 15px;
+            color: #666;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* --- Banner CTA (Call to Action) --- */
+        .cta-banner {
+            background-color: #ffffff; /* FONDO CAMBIADO A BLANCO */
+            border-radius: 10px; /* Bordes redondeados */
+            border: 1px solid #eeeeee; /* Borde sutil añadido */
+            padding: 50px 30px;
+            text-align: center;
+            width: 100%; /* Ocupa todo el ancho del container-apartado */
+            box-sizing: border-box; /* Para que el padding no rompa el layout */
+        }
+
+        .cta-banner h3 {
+            font-family: 'EB Garamond', serif; /* Fuente Serif */
+            font-weight: 500; 
+            font-size: 36px;
+            color: #333333; /* COLOR CAMBIADO A OSCURO */
+            margin: 0 0 15px 0;
+            text-transform: uppercase; 
+            letter-spacing: 2px; 
+        }
+
+        .cta-banner p {
+            font-family: 'Inter', sans-serif; 
+            font-weight: normal; 
+            font-size: 18px; 
+            color: #666666; /* COLOR CAMBIADO A GRIS OSCURO */
+            line-height: 1.6;
+            max-width: 600px; /* Evita que el texto sea demasiado ancho */
+            margin: 0 auto 30px auto; /* Centra el párrafo */
+        }
+
+        /* --- ESTILOS DEL BOTÓN "HABLEMOS" (Igual que .hero-button) --- */
+        .cta-button {
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 16px;
+            display: inline-block;
+            padding: 12px 35px;
+            
+            border: 2px solid #DAA520; /* Borde dorado */
+            color: #DAA520; /* Texto dorado (para fondo blanco) */
+            background-color: transparent; /* Fondo transparente */
+            
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #DAA520; /* Fondo dorado */
+            color: #000000; /* Texto negro */
+        }
+
+
+        /* ==================================================
+          Estilos del Pie de Página
+        ==================================================
+        */
+        .piepagina {
+            background-color: #2b2b2b; /* Fondo oscuro para el footer */
+            color: #cccccc; /* Color de texto claro */
+            padding: 60px 30px 0; /* Espaciado interno, sin padding abajo */
+            margin-top: 50px; /* Separación del contenido de la página */
+            font-family: 'Inter', sans-serif; /* Fuente legible */
+        }
+
+        .footer-container {
+            max-width: 1400px; /* Coincide con el ancho del menú */
+            margin: 0 auto; /* Centra el contenedor */
+            display: flex;
+            flex-wrap: wrap; /* Permite que las columnas se apilen en móvil */
+            justify-content: space-between; /* Distribuye las columnas */
+            gap: 30px; /* Espacio entre columnas */
+        }
+
+        /* Columna individual del footer */
+        .footer-column {
+            flex: 1; /* Permite que las columnas crezcan */
+            min-width: 230px; /* Ancho mínimo antes de apilarse */
+            margin-bottom: 30px;
+        }
+
+        /* Columna específica para el logo (izquierda) */
+        .footer-column.logo-column {
+            flex-basis: 300px; /* Un poco más de espacio base */
+            flex-grow: 1;
+        }
+
+        .footer-logo-img {
+            max-width: 180px; /* Tamaño del logo en el footer */
+            margin-bottom: 20px;
+        }
+
+        /* Títulos de las columnas */
+        .footer-column h4 {
+            /* Fuente caligráfica para los títulos */
+            font-family: 'Great Vibes', cursive;
+            font-weight: 400; /* Las fuentes script no suelen ser bold */
+            color: #ffffff;
+            font-size: 28px; /* Aumentar tamaño para la fuente script */
+            margin-bottom: 25px;
+            position: relative;
+        }
+        
+        /* Línea decorativa bajo los títulos */
+        .footer-column h4::after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 2px;
+            background-color: #DAA520; /* Dorado */
+            margin-top: 8px;
+        }
+
+        /* Estilo para párrafos de contacto y descripción */
+        .footer-column p {
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        /* Iconos de contacto */
+        .footer-column p i {
+            color: #DAA520; /* Dorado */
+            margin-right: 12px;
+            width: 20px;
+            text-align: center;
+        }
+
+        /* Lista de enlaces */
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-column ul li a {
+            color: #cccccc;
+            text-decoration: none;
+            font-size: 15px; /* Tamaño de fuente normal */
+            transition: color 0.3s ease, padding-left 0.3s ease;
+        }
+
+        .footer-column ul li a:hover {
+            color: #DAA520; /* Dorado */
+            padding-left: 5px; /* Efecto sutil al pasar el ratón */
+        }
+
+        /* Iconos de Redes Sociales */
+        .footer-socials {
+            margin-top: 25px;
+        }
+
+        .footer-socials a {
+            color: #ffffff;
+            background-color: #444444;
+            width: 40px;
+            height: 40px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 18px;
+            margin-right: 10px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .footer-socials a:hover {
+            background-color: #DAA520; /* Dorado */
+            color: #2b2b2b; /* Color oscuro */
+            transform: scale(1.1);
+        }
+
+        /* Barra inferior de Copyright */
+        .footer-bottom-bar {
+            background-color: #1a1a1a; /* Aún más oscuro */
+            text-align: center;
+            padding: 20px 30px;
+            margin: 30px -30px 0; /* Se estira al ancho del padding del footer */
+            font-size: 14px;
+            color: #999999;
+        }

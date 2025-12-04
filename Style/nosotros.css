@@ -1,0 +1,447 @@
+  /* --- Reseteo Básico y Fuente --- */
+        body {
+            /* Usamos Inter como fuente base para legibilidad general */
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            background-color: #ffffff; 
+        }
+
+        /* ==================================================
+          Estilos del Menú Superior
+        ==================================================
+        */
+
+        .menusuperior {
+            background-color: #ffffff;
+            color: #000000; 
+            padding: 10px 30px;
+            border-bottom: 1px solid #eeeeee; 
+            display: flex;
+            justify-content: center;
+        }
+
+        .menu-nav {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px; 
+            max-width: 1400px;
+            width: 100%;
+        }
+
+        /* --- 1. Enlaces Izquierdos y Derechos --- */
+
+        .menu-links-left,
+        .menu-links-right {
+            display: flex;
+            align-items: center;
+            gap: 25px; 
+        }
+
+        /* Estilo general de todos los enlaces en el nav */
+        .menu-nav a {
+            color: #000000; 
+            text-decoration: none;
+            padding: 8px 0; 
+            white-space: nowrap; 
+            
+            /* Transición suave para color y tamaño */
+            transform: scale(1); /* Estado base del tamaño */
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .menu-nav a:hover {
+            color: #DAA520; /* Un tono de dorado */
+            transform: scale(1.1); /* Un 10% más grande */
+        }
+        
+        /* Aplicamos la fuente script a los enlaces de texto */
+        .menu-nav a.nav-link {
+            font-family: 'Great Vibes', cursive; 
+            font-weight: 400; 
+            font-size: 24px; 
+            position: relative;
+            top: 2px;
+            color: #333333; /* Color base específico */
+        }
+
+        .menu-nav a.nav-link:hover {
+            color: #DAA520; /* Dorado */
+        }
+
+
+        /* Jerarquía para enlaces destacados */
+        .menu-nav a.link-destacado {
+            color: #000000; /* Color base específico */
+            font-size: 28px; 
+        }
+        
+        .menu-nav a.link-destacado:hover {
+            color: #DAA520; /* Dorado */
+        }
+
+
+        /* --- 2. Logo Central --- */
+
+        .menu-logo {
+            flex-grow: 0;
+            flex-shrink: 0;
+            padding: 0 20px; 
+            transform: scale(1);
+            transition: transform 0.3s ease;
+        }
+        .menu-logo:hover {
+             transform: scale(1.05);
+        }
+        
+        .logo-img {
+            max-height: 90px; 
+            width: auto;
+            display: block; 
+        }
+
+        /* --- 3. Iconos --- */
+        
+        .menu-icon-link .fa-solid {
+            font-size: 22px; /* Controla el tamaño del icono */
+            display: block;
+        }
+
+        /* ==================================================
+          Diseño Responsivo (Móvil)
+        ==================================================
+        */
+
+        @media (max-width: 900px) {
+            .menu-nav {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .menu-logo {
+                order: -1; 
+            }
+            .menu-links-left,
+            .menu-links-right {
+                justify-content: center;
+                width: 100%;
+                gap: 20px;
+                padding: 5px 0;
+            }
+            .menu-nav a.nav-link {
+                font-size: 22px;
+            }
+            .menu-nav a.link-destacado {
+                font-size: 26px;
+            }
+
+            .menu-nav a:hover {
+                transform: scale(1);
+                color: #DAA520; 
+            }
+            .menu-nav a.nav-link:hover {
+                 color: #DAA520;
+            }
+            .menu-nav a.link-destacado:hover {
+                color: #DAA520;
+            }
+
+            .menu-logo:hover {
+                transform: scale(1);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .menu-links-left,
+            .menu-links-right {
+                gap: 15px;
+                flex-wrap: wrap; 
+            }
+            .menusuperior {
+                padding: 15px;
+            }
+            .menu-nav a.nav-link {
+                font-size: 20px;
+            }
+            .menu-nav a.link-destacado {
+                font-size: 24px;
+            }
+        }
+      
+        /* ==================================================
+          Estilos del Breadcrumb (Migas de Pan)
+        ==================================================
+        */
+        .breadcrumb-container {
+            padding: 20px 30px; /* Un poco más de padding */
+            background-color: #f9f9f9; /* Un fondo muy sutil */
+            border-bottom: 1px solid #eeeeee;
+            display: flex;
+            justify-content: center;
+        }
+
+        .breadcrumb-nav {
+            max-width: 1400px;
+            width: 100%;
+            /* FUENTE CAMBIADA */
+            font-family: 'EB Garamond', serif;
+            font-size: 13px; /* Tamaño ajustado (reducido) */
+            font-weight: 500;
+            text-transform: uppercase; /* Mayúsculas */
+            letter-spacing: 1px; /* Espaciado */
+        }
+
+        .breadcrumb-nav a {
+            color: #DAA520; /* Dorado para el enlace */
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .breadcrumb-nav a:hover {
+            color: #333; /* Oscuro al pasar el ratón */
+        }
+
+        .breadcrumb-separator {
+            margin: 0 10px;
+            color: #999;
+        }
+
+        .breadcrumb-actual {
+            color: #333; /* El color de la página actual */
+            font-weight: 500;
+        }
+        
+        /* ==================================================
+          Estilos de Contenido (Sobre Nosotros) - NUEVO
+        ==================================================
+        */
+        .primerapartado, .segundoapartado, .tercerapartado, .cuartoapartado {
+            padding: 60px 30px;
+            display: flex;
+            justify-content: center;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        /* Alternamos colores de fondo para separar visualmente */
+        .segundoapartado, .cuartoapartado {
+            background-color: #fdfdfd; 
+        }
+        
+        .content-container {
+            max-width: 1200px;
+            width: 100%;
+        }
+        
+        .content-container h2 {
+            font-family: 'EB Garamond', serif; /* Tipografía de títulos */
+            font-size: 32px;
+            font-weight: 500;
+            color: #222;
+            margin: 0 0 25px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .content-container p, .content-container li {
+            font-family: 'Inter', sans-serif; /* Tipografía de párrafos */
+            font-size: 16px;
+            color: #555;
+            line-height: 1.8;
+            margin: 0 0 20px 0;
+        }
+        
+        .content-container ul {
+            list-style: none;
+            padding-left: 20px;
+        }
+        
+        .content-container li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 15px;
+        }
+
+        /* Icono dorado para la lista de 'Compromiso' */
+        .content-container li::before {
+            content: '\f00c'; /* Icono de Check */
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: #DAA520; /* Dorado */
+            position: absolute;
+            left: 0;
+            top: 4px;
+            font-size: 14px;
+        }
+
+        /* Layout de 2 columnas (texto + imagen) */
+        .about-layout {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .about-layout .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-layout .about-image {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .about-layout .about-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Layout Invertido (imagen a la izquierda) */
+        .layout-reverse {
+            flex-direction: row-reverse;
+        }
+
+        /* Responsivo para los layouts de 2 columnas */
+        @media (max-width: 768px) {
+            .about-layout {
+                flex-direction: column;
+            }
+            .layout-reverse {
+                flex-direction: column; /* Mantiene el orden vertical en móvil */
+            }
+            .content-container h2 {
+                font-size: 28px;
+            }
+        }
+
+        /* ==================================================
+          Estilos del Pie de Página
+        ==================================================
+        */
+        .piepagina {
+            background-color: #2b2b2b; /* Fondo oscuro para el footer */
+            color: #cccccc; /* Color de texto claro */
+            padding: 60px 30px 0; /* Espaciado interno, sin padding abajo */
+            margin-top: 50px; /* Separación del contenido de la página */
+            font-family: 'Inter', sans-serif; /* Fuente legible */
+        }
+
+        .footer-container {
+            max-width: 1400px; /* Coincide con el ancho del menú */
+            margin: 0 auto; /* Centra el contenedor */
+            display: flex;
+            flex-wrap: wrap; /* Permite que las columnas se apilen en móvil */
+            justify-content: space-between; /* Distribuye las columnas */
+            gap: 30px; /* Espacio entre columnas */
+        }
+
+        /* Columna individual del footer */
+        .footer-column {
+            flex: 1; /* Permite que las columnas crezcan */
+            min-width: 230px; /* Ancho mínimo antes de apilarse */
+            margin-bottom: 30px;
+        }
+
+        /* Columna específica para el logo (izquierda) */
+        .footer-column.logo-column {
+            flex-basis: 300px; /* Un poco más de espacio base */
+            flex-grow: 1;
+        }
+
+        .footer-logo-img {
+            max-width: 180px; /* Tamaño del logo en el footer */
+            margin-bottom: 20px;
+        }
+
+        /* Títulos de las columnas */
+        .footer-column h4 {
+            /* Fuente caligráfica para los títulos */
+            font-family: 'Great Vibes', cursive;
+            font-weight: 400; /* Las fuentes script no suelen ser bold */
+            color: #ffffff;
+            font-size: 28px; /* Aumentar tamaño para la fuente script */
+            margin-bottom: 25px;
+            position: relative;
+        }
+        
+        /* Línea decorativa bajo los títulos */
+        .footer-column h4::after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 2px;
+            background-color: #DAA520; /* Dorado */
+            margin-top: 8px;
+        }
+
+        /* Estilo para párrafos de contacto y descripción */
+        .footer-column p {
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        /* Iconos de contacto */
+        .footer-column p i {
+            color: #DAA520; /* Dorado */
+            margin-right: 12px;
+            width: 20px;
+            text-align: center;
+        }
+
+        /* Lista de enlaces */
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-column ul li a {
+            color: #cccccc;
+            text-decoration: none;
+            font-size: 15px; /* Tamaño de fuente normal */
+            transition: color 0.3s ease, padding-left 0.3s ease;
+        }
+
+        .footer-column ul li a:hover {
+            color: #DAA520; /* Dorado */
+            padding-left: 5px; /* Efecto sutil al pasar el ratón */
+        }
+
+        /* Iconos de Redes Sociales */
+        .footer-socials {
+            margin-top: 25px;
+        }
+
+        .footer-socials a {
+            color: #ffffff;
+            background-color: #444444;
+            width: 40px;
+            height: 40px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 18px;
+            margin-right: 10px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .footer-socials a:hover {
+            background-color: #DAA520; /* Dorado */
+            color: #2b2b2b; /* Color oscuro */
+            transform: scale(1.1);
+        }
+
+        /* Barra inferior de Copyright */
+        .footer-bottom-bar {
+            background-color: #1a1a1a; /* Aún más oscuro */
+            text-align: center;
+            padding: 20px 30px;
+            margin: 30px -30px 0; /* Se estira al ancho del padding del footer */
+            font-size: 14px;
+            color: #999999;
+        }
