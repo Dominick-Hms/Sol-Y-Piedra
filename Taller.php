@@ -70,13 +70,6 @@ $tecnica_principal = "Alfarería"; // Técnica principal del taller
     </nav>
 </section>
 
-<section class="taller-banner">
-    <div class="taller-banner-content">
-        <h1 class="taller-banner-title"><?php echo $nombre_taller; ?></h1>
-        <h2 class="taller-banner-subtitle"><?php echo $tecnica_principal; ?> — <?php echo $objetivo; ?></h2>
-    </div>
-</section>
-
 <main class="timeline-container">
     <div class="project-meta">
         <div class="meta-item">Nombre: <?php echo $nombre_taller; ?></div>
@@ -150,39 +143,6 @@ $tecnica_principal = "Alfarería"; // Técnica principal del taller
         <h3>Ideas de Diseño (Branding)</h3>
         <p>Basado en <strong><?php echo $nombre_taller; ?></strong> y la técnica <strong><?php echo $tecnica_principal; ?></strong>, se proponen 3 paletas y estilos de logo:</p>
 
-        <div>
-            <strong>Paleta 1 — Calidez artesanal</strong>
-            <div class="swatches">
-                <div class="swatch" style="background:#A35C2A">#A35C2A</div>
-                <div class="swatch" style="background:#E8C69C;color:#222">#E8C69C</div>
-                <div class="swatch" style="background:#2F3A2E">#2F3A2E</div>
-                <div class="swatch" style="background:#FFFFFF;color:#222;border:1px solid #ccc">#FFFFFF</div>
-                <div class="swatch" style="background:#7A4B2A">#7A4B2A</div>
-            </div>
-        </div>
-
-        <div style="margin-top:10px">
-            <strong>Paleta 2 — Tradición y naturalidad</strong>
-            <div class="swatches">
-                <div class="swatch" style="background:#5A4E3A">#5A4E3A</div>
-                <div class="swatch" style="background:#C7B89A;color:#222">#C7B89A</div>
-                <div class="swatch" style="background:#F5F2EA;color:#222">#F5F2EA</div>
-                <div class="swatch" style="background:#B04C3A">#B04C3A</div>
-                <div class="swatch" style="background:#2E5F4F">#2E5F4F</div>
-            </div>
-        </div>
-
-        <div style="margin-top:10px">
-            <strong>Paleta 3 — Moderno y minimal</strong>
-            <div class="swatches">
-                <div class="swatch" style="background:#0F1724">#0F1724</div>
-                <div class="swatch" style="background:#F7F7F7;color:#222">#F7F7F7</div>
-                <div class="swatch" style="background:#FF8A4C">#FF8A4C</div>
-                <div class="swatch" style="background:#7BD389;color:#222">#7BD389</div>
-                <div class="swatch" style="background:#2B7A78">#2B7A78</div>
-            </div>
-        </div>
-
         <div class="logo-style">
             <strong>Estilos de logotipo sugeridos</strong>
             <ul>
@@ -199,7 +159,6 @@ $tecnica_principal = "Alfarería"; // Técnica principal del taller
 </body>
 </html>
 
-<!-- Bloque: Línea de Tiempo Vertical (integrado) -->
 <section class="vertical-timeline">
     <h2 class="vt-title">Línea de Tiempo — <?php echo $nombre_taller; ?></h2>
 
